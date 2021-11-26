@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron" style="background-color: rgb(127, 246, 255);">
+  <div class="container">
+    <h1 class="display-4" style="font-family:Corben,cursive">hinatazaka46 schedule install</h1>
+    <h2 >for Google Calendar</h2>
+  </div>
+</div>
+
+{% endblock header %}
+
+{% block content %}
+<p><a href = "{% url 'home' %}" class="btn btn-info" style="margin-left: 5%;">select month</a></p>
+<p><a href = "{% url 'csv' %}" class="btn btn-info" style="margin-left: 5%;">export</a></p>
+<div class="container">
+  <div class="table-responsive">
+    <ul class="list-group list-group-flush">
+      <table border="2" class="table table-striped" >
+        <tr>
+          <th>date</th>
+          <th>title</th>
+          <th>URL</th>
+        </tr>
+        {% for post, post2, post3 in list %} 
+        <tr>
+          <td>{{ post }}</td>
+          <td>{{ post2 }}</td>
+          <td><a href="{{ post3 }}">{{ post3 }}</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </ul>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,2 @@
+BullseyeCoverage 8.17.5 error 15: Cannot find C:\WINDOWS\system32/test.cov, errno=2 "指定されたファイルが見つかりません。 ". COVFILE is not set
+

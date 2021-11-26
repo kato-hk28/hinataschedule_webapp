@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<!-- <div class="jumbotron" style="background-color: rgb(127, 246, 255);"> -->
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4" style="font-family:Corben,cursive">hinatazaka46 schedule install</h1>
+    <h2 >for Google Calendar</h2>
+  </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+  <form action='' method='POST'>{% csrf_token %}
+    <p>month： <input type="text" name='month' placeholder="yyyymm"></p>
+    <p>category:
+      <select name="category">
+        <option value="all">ALL</option>
+        <option value="shakehands">握手会</option>
+        <option value="event">イベント</option>
+        <option value="goods">グッズ</option>
+        <option value="release">リリース</option>
+        <option value="ticket">チケット</option>
+        <option value="media">メディア</option>
+        <option value="birthday">誕生日</option>
+        <option value="other">その他</option>
+      </select>
+    </p>
+    <input type="submit" value="get" class="btn btn-info">
+  </form>
+</div>
+{% endblock content %}
